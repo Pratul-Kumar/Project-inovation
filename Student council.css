@@ -1,13 +1,15 @@
 .container{
     display: flex;
     flex-direction: column;
+    columns: 4;
     color: white;
     background-color: black;
     background-size: cover;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .card{
@@ -19,12 +21,16 @@
     box-shadow: 0 0 40px rgb(230, 31, 31);
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
+    width: calc(33.33% - 20px);
 }
 
 .card .image-box {
     border-radius: inherit;
     overflow: hidden;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card .image-box img{
@@ -32,14 +38,12 @@
     object-fit: cover;
     object-position: 50% 90%;
     transition: 0.5s ease-in-out;
+    height: 100%;
 }
 
 .card::after {
     content: "";
-    position: absolute;
-    inset: 11px;
-    border: 3px solid white;
-    border-radius: 8px;
+    position: relative;
     opacity: 1;
     transition: 0.1s ease-in-out;
     overflow: hidden;
@@ -69,33 +73,22 @@
     opacity: 0;
     padding: 25px;
     transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
+    border-radius: 8px;
+    visibility: hidden;
 }
 
 .card:hover .content{
     opacity: 0.7;
-    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
-    padding: 30px;
-    border-radius: 8px;
+    visibility: visible;
+    animation: popup 0.5s ease-in-out;
 }
 
-.column {
-    flex-basis: 33.33%;
-    padding: 10px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 768px) {
-    .column {
-        flex-basis: 50%;
+@keyframes popup {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
     }
-}
-
-@media only screen and (max-width: 480px) {
-    .column {
-        flex-basis: 100%;
+    100% {
+        transform: translate(-50%, -50%) scale(1);
     }
 }
