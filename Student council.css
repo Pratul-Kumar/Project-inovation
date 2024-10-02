@@ -1,4 +1,4 @@
-.container{
+.container-fluid{
     display: flex;
     flex-wrap: wrap;
     flex: auto;
@@ -13,7 +13,10 @@
     padding: 20px;
     box-sizing: border-box;
 }
-
+.nav-mage{
+    color: white;
+    mix-blend-mode: ;
+}
 .card{
     margin: 20px;
     position: relative;
