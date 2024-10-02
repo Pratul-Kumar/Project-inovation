@@ -1,7 +1,9 @@
 .container{
     display: flex;
-    flex-direction: column;
-    columns: 4;
+    flex-wrap: wrap;
+    flex: auto;
+    flex-grow: inherit;
+    columns: 3;
     color: white;
     background-color: black;
     background-size: cover;
@@ -74,8 +76,12 @@
     padding: 25px;
     transition: all 0.3s ease-in-out;
     background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
-    border-radius: 8px;
+    border-radius: 50%;
     visibility: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .card:hover .content{
