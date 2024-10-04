@@ -313,9 +313,10 @@ h1:hover {
 }
 
 .card .content{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 253, 253);
     text-transform: capitalize;
-    width: 80%;
+    width: 95%;
+    height: 95%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -325,11 +326,15 @@ h1:hover {
     font-weight: bold;
     z-index: 1;
     opacity: 0;
-    padding: 40px;
+    padding-top: 150px;
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
+    background: black;
     visibility: hidden;
-    border-radius: 50%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .card:hover .content{
