@@ -385,3 +385,18 @@ h5{
     text-align: center;
     padding: auto;
 }
+
+
+.heading-barriers{
+    text-align: center;
+    background-color: rgb(157, 29, 29);
+    margin: 1rem;
+    color: black;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    border-radius: 2rem;
+    padding: 0.2rem;
+    width: 100%;
+}

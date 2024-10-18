@@ -16,6 +16,7 @@ body{
 .heading-box{
     padding: 1px;
     width: 100%;
+    
 }
 
 .image-box .image{ 
@@ -84,12 +85,6 @@ button {
   button:hover::before {
     box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
   }
-.member-heading{
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-
 .image-box-2 .image-2{ 
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -115,10 +110,9 @@ button {
     border-radius: 50%;
   }
   
-  .prime-box{
+.prime-box{
     display: flex;
-    flex: column;
-    width: 100%;
+    padding: 20px;
   }
 .prime-name-heading{
     padding: 10px;
@@ -127,6 +121,19 @@ button {
 .prime-members-container{
     display: flex;
     flex-direction: row;
-    
     grid-row: 3;
+}
+.prime-members-heading, .member-heading{
+  text-align: center;
+  font-family: Times New Roman;
+  font-weight: 800;
+  padding: 0.5rem;
+  border: 2rem solid ;
+  color: rgb(0, 0, 0);
+  background-color: rgb(95, 95, 225);
+  -webkit-border-radius: 50rem;
+  -moz-border-radius: 50rem;
+  -ms-border-radius: 50rem;
+  -o-border-radius: 50rem;
+  border-radius: 50rem;
 }
