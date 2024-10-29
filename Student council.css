@@ -41,8 +41,8 @@ body{
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
+    justify-content: space-evenly;
+    align-self: center;
     width: 100%;
     padding: 10px;
     align-items: end;
@@ -52,7 +52,7 @@ body{
     margin: 0 10px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 500px) {
     .nav-container {
         flex-direction: column;
     }
