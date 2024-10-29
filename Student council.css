@@ -13,93 +13,55 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.navbar-brand:hover{
-    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
-    width: 100%;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    border-radius: 15px;
-}
-.nav-image{
-    border-radius: 50%;
-    border: 2px solid;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin: 20px;
-    transition: all 0.3s ease-in-out;
+.container {
+    display: flex;
+    background-color: #c0c0c0;
+    padding: 10px;
+    color: #fff;
 }
 
-.navbar-brand{
-    font-size: 55px;
-    font-weight: 800;
-    font-family: cursive;
-    text-align: center;
-    padding: 2px;
-    width: 100%;
-    box-sizing: border-box;
+.logo {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.image{
+    height: 60px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 100%;
+    padding: 10px;
     align-items: center;
 }
 
-.navbar-brand img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 20px;
-    object-fit: cover;
-}
-
-@media (max-width: 1200px) {
-    .navbar-brand {
-        font-size: 30px;
-        padding: 20px;
-    }
-    .nav-image{
-        width: 80px;
-        height: 80px;
-    }
-    .navbar-brand img{
-        width: 80px;
-        height: 80px;
-    }
+.nav-item {
+    margin: 0 10px;
 }
 
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 25px;
-        padding: 15px;
+    .container {
+        flex-direction: column;
     }
-    .nav-image{
-        width: 60px;
-        height: 60px;
-    }
-    .navbar-brand img{
-        width: 60px;
-        height: 60px;
+
+    .logo {
+        margin-bottom: 10px;
     }
 }
-
-@media (max-width: 480px) {
-    .navbar-brand {
-        font-size: 20px;
-        padding: 10px;
-    }
-    .nav-image{
-        width: 40px;
-        height: 40px;
-    }
-    .navbar-brand img{
-        width: 40px;
-        height: 40px;
-    }
-}
-
 
 /*faculity box*/
 
