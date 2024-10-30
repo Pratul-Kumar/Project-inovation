@@ -9,7 +9,18 @@
             padding: 10px;
             color: #fff;
             text-align: center;
+            animation: pageOpen 2s;
         }
+
+        @keyframes pageOpen {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -53,8 +64,7 @@
             animation: rotate 2s;
         }
 
-
-
+        
         .team-member h3 {
             color: #333;
             margin-bottom: 5px;
@@ -102,7 +112,7 @@
                 width: 100px;
                 height: 100px;
             }
-}
+        }
     </style>
 </head>
 <body>
