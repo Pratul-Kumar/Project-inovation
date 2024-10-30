@@ -56,14 +56,18 @@ body{
 
 .btn {
     margin: 10px;
-    color: #fff;
+    color: black;
+    font-weight: 800;
     border: 2px solid #fff;
-    padding: 10px;
-    -webkit-border-radius: 30rem;
-    -moz-border-radius: 30rem;
-    -ms-border-radius: 30rem;
-    -o-border-radius: 30rem;
-    border-radius: 30rem;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 15px;
+    background-color: cornsilk;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 @media (min-width: 200px) {
