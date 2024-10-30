@@ -37,6 +37,8 @@
                 transition: 0.2s ease-in-out;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 animation: scaleUp 1s;
+                flex-wrap: wrap;
+                overflow: hidden;
             }
 
             @keyframes scaleUp {
@@ -49,14 +51,14 @@
             }
 
             .img {
-                height: 30%;
+                height: 210px;
                 position: absolute;
                 transition: 0.2s ease-in-out;
                 z-index: 1;
                 border-radius: 50%;
-                height: 180px;
                 padding: 5px;
                 animation: fadeIn 1s;
+                
             }
 
             @keyframes fadeIn {
@@ -144,6 +146,11 @@
                 }
             }
 
+            .heading{
+                border-bottom: 2px solid;
+                margin-bottom: 20px;
+            }
+
     </style>
 </head>
 <body>
@@ -161,7 +168,7 @@
                 </div>
             </a>
 
-        <a href="#">
+        <a href="/pages/Clubs Pages/drone.html">
             <div class="card">
                 <img class="img" src="/image folder/DRONE SOCIETY.jpg" alt="DRONE SOCIETY">
                 <div class="textBox">
