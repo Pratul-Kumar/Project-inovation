@@ -4,48 +4,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Faculity</title>
     <style>
-
         .container {
-            width: 100%;
-            padding: 10px;
-            background-color: #000000;
-            background-size: cover;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease-in-out;
-            position: inherit;
+        width: 100%;
+        padding: 10px;
+        background-color: #000000;
+        background-size: cover;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-sizing: border-box;
+        position: inherit;
+        animation: fadeIn 2s;
         }
 
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
         h1 {
             color: #ffffff;
             font-weight: 800;
             font-family: Playfair Display;
-            transition: color 0.3s ease-in-out;
-        }
-
-        h1:hover {
-            color: #ccc;
         }
 
         .faculty-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-gap: 20px;
+            animation: fadeIn 2s;
         }
 
         .faculty-member {
             background-color: #ffffff;
+            color: #000000;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .faculty-member:hover {
-            background-color: #918383;
+            animation: fadeIn 2s;
         }
 
         .faculty-member img {
@@ -54,33 +54,18 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .faculty-member:hover img {
-            transform: scale(1.1);
         }
 
         .faculty-member h3 {
-            color: #333;
+            color: black;
             margin-bottom: 5px;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .faculty-member:hover h3 {
-            color: #000000;
-            font-weight: 600;
+            font-size: 25px;
         }
 
         .faculty-member p {
-            font-size: 14px;
-            color: #8e0606;
-            font-weight: 700;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .faculty-member:hover p {
-            color: #ff0000;
+            font-size: 18px;
+            font-weight: 800;
+            font-style: oblique;
         }
 
         @media (max-width: 1200px) {
@@ -98,7 +83,7 @@
             <div class="faculty-member">
                 <img src="/image folder/faculty/Prof.(Dr.) Shashi K. Jain.png" alt="Prof.(Dr.) Shashi K. Jain">
                 <h3>Prof.(Dr.) Shashi K. Jain</h3>
-                <p>COUNCIL HEAD</p>
+                <p class="para">COUNCIL HEAD</p>
             </div>
             <div class="faculty-member">
                 <img src="https://via.placeholder.com/150" alt="Prof. Pankaj Patel">
