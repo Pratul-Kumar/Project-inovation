@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        body{
+            background-color: black;
+            padding: 10px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: scaleUp 2s;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            animation: rotate 2s;
+        }
+
+
+
+        .team-member h3 {
+            color: #333;
+            margin-bottom: 5px;
+            animation: fadeIn 2s;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 14px;
+            animation: fadeIn 2s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .team-member img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member img {
+                width: 100px;
+                height: 100px;
+            }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading-barriers"><h1>Office Barriers</h1></div>
+        
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-member">
+            <img src="Prabhat_kumar.jpg" alt="Prabhat kumar">
+            <h3>Prabhat kumar</h3>
+            <p>President</p>
+          </div>
+          <!-- Repeat for other team members -->
+          <div class="team-member">
+            <img src="Tikesh_Kardate.jpg" alt="Tikesh Kardate">
+            <h3>Tikesh Kardate</h3>
+            <p>General Secretary</p>
+          </div>
+          <div class="team-member">
+            <img src="Sahil_Kumar.jpg" alt="Sahil Kumar">
+            <h3>Sahil Kumar</h3>
+            <p>Club Advisor</p>
+          </div>
+          <div class="team-member">
+            <img src="Shruti_Sarawagi.jpg" alt="Shruti Sarawagi">
+            <h3>Shruti Sarawagi</h3>
+            <p>Chief Committee Officer</p>
+          </div>
+          <div class="team-member">
+            <img src="Adnan_Alam.jpg" alt="Adnan Alam">
+            <h3>Adnan Alam</h3>
+            <p>Assistant Chief Committee Officer</p>
+          </div>
+          <div class="team-member">
+            <img src="Priyanshu_Patel.jpg" alt="Priyanshu Patel">
+            <h3>Priyanshu Patel</h3>
+            <p>Club Editor</p>
+          </div>
+          <div class="team-member">
+            <img src="Harsh ita_Sharma.jpg" alt="Harshita Sharma">
+            <h3>Harshita Sharma</h3>
+            <p>Club Secretary</p>
+          </div>
+          <div class="team-member">
+            <img src="Sakshi_Sharma.jpg" alt="Sakshi Sharma">
+            <h3>Sakshi Sharma</h3>
+            <p>Club Treasurer</p>
+          </div>
+          <div class="team-member">
+            <img src="Sakshi_Sharma.jpg" alt="Sakshi Sharma">
+            <h3>Sakshi Sharma</h3>
+            <p>Club Treasurer</p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
