@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Clubs</title>
+    <link rel="stylesheet" href="/navbaar.css">
+    <script src="/navbaar.js"></script>
     <style>
             body{
                 background-color: black;
@@ -136,10 +138,15 @@
             }
 
             .club-grid{
-                display: grid;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 grid-gap: 20px;
                 animation: fadeIn 2s;
+                align-items: center;
+                justify-content: center;
+                align-self: center;
             }
 
             @media (max-width: 1200px) {
@@ -156,6 +163,25 @@
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="logo">
+            <img class="image" src="/image folder/Student council png.png"/ title="council logo">
+            <h1>STUDENT COUNCIL</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/student council.html">Home</a></li>
+            <li><a href="/pages/OurTeam.html">Members</a></li>
+            <li><a href="/pages/FaculityPage.html">Faculity</a></li>
+            <li><a href="#">Event Gallary</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="heading"><h1>OUR CLUBS & SOCITIES</h1></div>
         
