@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technocrats Carnival Registration</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1b32;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #ff8e53, #e54d4d);
+            color: #fff;
+            padding: 40px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.4em;
+        }
+        .form-section {
+            background-color: #2a2a45;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+        .form-section h2 {
+            color: #ffd700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f4f4f9;
+            font-size: 1em;
+            color: #333;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            outline: none;
+            box-shadow: 0px 0px 5px 2px rgba(255, 204, 0, 0.5);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #ffd700;
+            color: #333;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #ffa500;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            background-color: #2a2a45;
+            color: #ddd;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <h1>Register for Technocrats Carnival 2024</h1>
+        <p>Be part of an exciting day filled with innovation, creativity, and teamwork!</p>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="form-section">
+        <h2>Registration Form</h2>
+        <form action="#" method="post">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Enrollment Number -->
+            <div class="form-group">
+                <label for="enrollment">Enrollment Number</label>
+                <input type="text" id="enrollment" name="enrollment" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Branch -->
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <input type="text" id="branch" name="branch" required>
+            </div>
+
+            <!-- College -->
+            <div class="form-group">
+                <label for="college">College</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+
+            <!-- Year Selection -->
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select id="year" name="year" required onchange="showEvents()">
+                    <option value="" disabled selected>Select your Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                </select>
+            </div>
+
+            <!-- Event Name (Dynamic Options) -->
+            <div class="form-group">
+                <label for="event">Event Name</label>
+                <select id="event" name="event" required>
+                    <option value="" disabled selected>Select an Event</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Registration</button>
+        </form>
+    </section>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Technocrats Group of Institutes. All rights reserved.</p>
+</footer>
+
+<script>
+    // Define event options for each year
+    const eventsByYear = {
+        "1": [
+            { value: "Craft Carnival", text: "Craft Carnival" },
+            { value: "Super Airways", text: "Super Airways" },
+            { value: "Action Replay", text: "Action Replay" }
+        ],
+        "2": [
+            { value: "Screen to Speech", text: "Screen to Speech" },
+            { value: "Out of the Box", text: "Out of the Box" }
+        ],
+        "3": [
+            { value: "Corporate Ramp Walk", text: "Corporate Ramp Walk" }
+        ]
+    };
+
+    function showEvents() {
+        // Get selected year
+        const year = document.getElementById("year").value;
+        // Get the event select element
+        const eventSelect = document.getElementById("event");
+
+        // Clear current options
+        eventSelect.innerHTML = '<option value="" disabled selected>Select an Event</option>';
+
+        // Populate event options based on selected year
+        if (eventsByYear[year]) {
+            eventsByYear[year].forEach(event => {
+                const option = document.createElement("option");
+                option.value = event.value;
+                option.textContent = event.text;
+                eventSelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
