@@ -4,20 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Gallary</title>
     <link rel="stylesheet" href="Gallery.css">
-    <script>
-        $(document).ready(function() {
-
-$(`[unique-script-id="w-w-dm-id"] .btn-box`).click(function() {
-  $(this).parent().children(".overlay").show();
-
-});
-
-
-$(`[unique-script-id="w-w-dm-id"] .close`).click(function() {
-  $(".overlay").hide();
-});
-});
-    </script>
 </head>
 <body>
     <div class="gallery_1" unique-script-id="w-w-dm-id">
@@ -142,5 +128,23 @@ $(`[unique-script-id="w-w-dm-id"] .close`).click(function() {
           </div>
         </div>
       </div>
+
+
+
+
+      <script>
+        $(document).ready(function() {
+
+$(`[unique-script-id="w-w-dm-id"] .btn-box`).click(function() {
+  $(this).parent().children(".overlay").show();
+
+});
+
+
+$(`[unique-script-id="w-w-dm-id"] .close`).click(function() {
+  $(".overlay").hide();
+});
+});
+    </script>
 </body>
 </html>
