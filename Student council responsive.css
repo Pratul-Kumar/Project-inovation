@@ -47,7 +47,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: url('image folder/main page images/student council.jpg') no-repeat center center;
+    background: url('image folder/front page images/Student council.jpg') no-repeat center center;
     background-size: cover;
   }
   
@@ -86,7 +86,7 @@
   
   /* Parallax Effect */
   .parallax-section {
-    background: url('image folder/main page images/WhatsApp Image 2024-10-29 at 09.14.38_a9fb1506.jpg') fixed center/cover;
+    background: url('image folder/front page images/WhatsApp Image 2024-10-29 at 09.14.38_a9fb1506.jpg') fixed center/cover;
     padding: 100px 0;
     color: #fff;
     text-align: center;
