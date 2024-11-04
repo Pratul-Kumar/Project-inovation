@@ -50,8 +50,6 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
 }
   /*
   #background-video {
@@ -63,7 +61,7 @@
     object-fit: cover;
   }*/
   
-  .banner-content {
+  .video-background {
     position: relative;
     display: flex;
     color: black;
@@ -71,7 +69,7 @@
     justify-content: center;
     height: 100vh;
     overflow: hidden;
-    background: url('image folder/front page images/student council.jpg') no-repeat center center;
+    background: url('image folder/front page images/Student council poster.jpg') no-repeat center center;
     /*Replace'fest-background.jpg'withyourimage*/background-size: cover;
 }
 
@@ -120,7 +118,7 @@
   
   /* Parallax Effect */
   .parallax-section {
-    background: url('image folder/front page images/WhatsApp Image 2024-10-29 at 09.14.38_a9fb1506.jpg') fixed center/cover;
+    background: url('image folder/front page images/student council.jpg') fixed center/cover;
     padding: 100px 0;
     color: black;
     text-align: center;
