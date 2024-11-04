@@ -8,6 +8,8 @@
   .contain {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .navbar {
@@ -22,17 +24,20 @@
   .navbar .logo {
     height: 1.5vw;
   }
-  .navbar .logo img {
-    height: 10vw;
-    width: 10vw;
+  .navbar .logo .image-logo {
+    height: 120px;
+    width: 120px;
   }
   .navbar nav ul {
     list-style: none;
     float: right;
+    padding: 10px;
+
   }
   
   .navbar nav ul li {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 20px;
   }
   
@@ -45,7 +50,9 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-  }
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
   /*
   #background-video {
     position: absolute;
@@ -56,13 +63,27 @@
     object-fit: cover;
   }*/
   
-  .video-background {
+  .banner-content {
     position: relative;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
     overflow: hidden;
-    background: url('image folder/front page images/student council.jpg') no-repeat center center; /* Replace 'fest-background.jpg' with your image */
-    background-size: cover;
-  }
+    background: url('image folder/front page images/student council.jpg') no-repeat center center;
+    /*Replace'fest-background.jpg'withyourimage*/background-size: cover;
+}
+
+.student-council{
+  color: Black;
+  font-weight: 800;
+  font-size: 48px;
+  font-family: sans-serif;
+  padding: 2px;
+  margin: 5px;
+  width: 100%;
+}
   
   .banner-content {
     position: absolute;
@@ -74,7 +95,7 @@
   }
   
   .banner-content h2, .banner-content p, .button {
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 1.5s forwards;
   }
   
