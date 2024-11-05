@@ -1,0 +1,339 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clubs</title>
+    <link rel="stylesheet" href="stylesheet/navbaar.css">
+    <script src="javascript/navbaar.js"></script>
+    <style>
+            body{
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 15px;
+                animation: pageLoad 2s;
+                border: 2px solid white;
+                border-radius: 10px;
+            }
+
+            @keyframes pageLoad {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            .card {
+                width: 210px;
+                height: 210px;
+                background: #efecec;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                align-self: center;
+                color: rgb(0, 0, 0);
+                transition: 0.2s ease-in-out;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                animation: scaleUp 1s;
+                flex-wrap: wrap;
+                overflow: hidden;
+            }
+
+            @keyframes scaleUp {
+                0% {
+                    transform: scale(0.5);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            .img {
+                height: 210px;
+                position: absolute;
+                transition: 0.2s ease-in-out;
+                z-index: 1;
+                border-radius: 50%;
+                padding: 5px;
+                animation: fadeIn 1s;
+                
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .textBox {
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                transition: 0.2s ease-in-out;
+                z-index: 2;
+                background-color: white;
+                padding: 8px;
+                width: 80%;
+                border-radius: 40px;
+                animation: slideUp 1s;
+            }
+
+            @keyframes slideUp {
+                0% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .textBox > .text {
+                font-weight: bold;
+            }
+
+            .textBox > .head {
+                font-size: 20px;
+            }
+
+            .card:hover > .textBox {
+                opacity: 1;
+            }
+
+            .card:hover > .img {
+                height: 65%;
+                filter: blur(7px);
+                animation: anim 3s infinite;
+            }
+
+            @keyframes anim {
+                0% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            .card:hover {
+                transform: scale(1.04) rotate(-1deg);
+            }
+
+            .club-grid{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-gap: 20px;
+                animation: fadeIn 2s;
+                align-items: center;
+                justify-content: center;
+                align-self: center;
+            }
+
+            @media (max-width: 1200px) {
+                .club-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+            }
+
+            .heading{
+                border-bottom: 2px solid;
+                margin-bottom: 20px;
+            }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img class="image-logo" src="/image folder/Student council png.png"/ title="council logo">
+            <h1>STUDENT COUNCIL</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/student council.html">Home</a></li>
+            <li><a href="/pages/OurTeam.html">Members</a></li>
+            <li><a href="/pages/FaculityPage.html">Faculity</a></li>
+            <li><a href="#">Event Gallary</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="heading"><h1>OUR CLUBS & SOCITIES</h1></div>
+        
+        <div class="club-grid">
+        
+            <a href="/pages/Clubs Pages/Coding club.html">
+                <div class="card">
+                    <img class="img" src="/image folder/14.jpg" alt="CODING CLUB">
+                    <div class="textBox">
+                        <p class="text head">CODING CLUB</p>
+                    </div>
+                </div>
+            </a>
+
+        <a href="/pages/Clubs Pages/drone.html">
+            <div class="card">
+                <img class="img" src="/image folder/DRONE SOCIETY.jpg" alt="DRONE SOCIETY">
+                <div class="textBox">
+                    <p class="text head">DRONE SOCIETY</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/mediafusion.html">
+            <div class="card">
+                <img class="img" src="/image folder/Media Fusion.jpg" alt="MEDIA FUSION">
+                <div class="textBox">
+                    <p class="text head">MEDIA FUSION</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Cultrul.html">
+            <div class="card">
+                <img class="img" src="/image folder/CULTURAL & EvENT.jpg" alt="CULTURAL CLUB">
+                <div class="textBox">
+                    <p class="text head">CULTURAL CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Robotics.html">
+            <div class="card">
+                <img class="img" src="/image folder/RObOTICS CLUB.jpg" alt="ROBOTICS CLUB">
+                <div class="textBox">
+                    <p class="text head">ROBOTICS CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/entrepreneurship club.html">
+            <div class="card">
+                <img class="img" src="/image folder/ENTREpRENEURSHIp.jpg" alt="ENTREpRENEURSHIp">
+                <div class="textBox">
+                    <p class="text head">ENTREPRENEURSHIP CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Literary club.html">
+            <div class="card">
+                <img class="img" src="/image folder/LITERARY Club.jpg" alt="LITERARY CLUB">
+                <div class="textBox">
+                    <p class="text head">LITERARY CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Renewable energy.html">
+            <div class="card">
+                <img class="img" src="/image folder/RENEwAbLE ENERGY.jpg" alt="RENEWABL ENERGY CLUB">
+                <div class="textBox">
+                    <p class="text head">RENEWABL ENERGY CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Disipline club.html">
+            <div class="card">
+                <img class="img" src="/image folder/DISCIpLINE.jpg" alt="DISCIPLINE CLUB">
+                <div class="textBox">
+                    <p class="text head">DISCIPLINE CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Alimni relation club.html">
+            <div class="card">
+                <img class="img" src="/image folder/Alumni Relation.jpg" alt="ALUMNI RELATION COMMITTEE">
+                <div class="textBox">
+                    <p class="text head">ALUMNI RELATION COMMITTEE</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/Tech wizards.html">
+            <div class="card">
+                <img class="img" src="/image folder/Tech WIZARDs.jpg" alt="TECH WIZARDS">
+                <div class="textBox">
+                    <p class="text head">TECH WIZARDS</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/EV.html">
+            <div class="card">
+                <img class="img" src="/image folder/EV.jpg" alt="EV">
+                <div class="textBox">
+                    <p class="text head">EV CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/music.html">
+            <div class="card">
+                <img class="img" src="/image folder/mUSIC SOCIETY.jpg" alt="MUSIC SOCIETY">
+                <div class="textBox">
+                    <p class="text head">MUSIC SOCIETY</p>
+                </div>
+            </div>
+        </a>
+
+       
+
+        <a href="/pages/Clubs Pages/Dance.html">
+            <div class="card">
+                <img class="img" src="/image folder/13.jpg" alt="DANCE CLUB">
+                <div class="textBox">
+                    <p class="text head">DANCE CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="/pages/Clubs Pages/IEEE Student chapter.html">
+            <div class="card">
+                <img class="img" src="/image folder/DRONE SOCIETY.jpg" alt="IEEE STUDENT CHAPTER">
+                <div class="textBox">
+                    <p class="text head">IEEE STUDENT CHAPTER</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#">
+            <div class="card">
+                <img class="img" src="/image folder/DRONE SOCIETY.jpg" alt="CYBER SECURITY CLUB">
+                <div class="textBox">
+                    <p class="text head">CYBER SECURITY<br> CLUB</p>
+                </div>
+            </div>
+        </a>
+
+        </div>
+    </div>
+</body>
+</html>
