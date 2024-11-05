@@ -88,7 +88,40 @@ app.get('/Renewable',(req,res)=>{
   res.render('Renewable energy', { title: 'Renewable Energy Page' });
 })
 
-// Start the server
+//disipline route
+app.get('/Disipline',(req,res)=>{
+  res.render('Disipline club', { title: 'Renewable Energy Page' });
+})
+
+//Alimni relation club route
+app.get('/Alimni relation club',(req,res)=>{
+  res.render('Alimni relation club', { title: 'Alimni Relation Club Page' });
+})
+
+//Tech wizards route
+app.get('/Tech wizards',(req,res)=>{
+  res.render('Tech wizards', { title: 'Tech Wizards Club Page' });
+})
+
+//EV club
+app.get('/EV ',(req,res)=>{
+  res.render('EV', { title: 'EV Club Page' });
+})
+
+//music club route
+app.get('/music',(req,res)=>{
+  res.render('music', { title: 'Music Club Page' });
+})
+
+//Dance club route
+app.get('/Dance',(req,res)=>{
+  res.render('Dance', { title: 'Dance Club Page' });
+})
+
+///IEEE Student chapter route
+app.get('/IEEE Student chapter',(req,res)=>{
+  res.render('IEEE Student chapter', { title: 'IEEE Student Chapter Page' });
+})
 
 
 // Start the server
