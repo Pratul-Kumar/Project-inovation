@@ -131,6 +131,20 @@ app.get('/Dev',(req,res)=>{
   res.render('Dev team', { title: 'Developer Page' });
 })
 
+//form routes
+
+app.get('/form',(req,res)=>{
+  res.render('form', { title: 'Form Page' });
+})
+
+// event details
+
+app.get('/event',(req,res)=>{
+  res.render('Event Details', { title: 'Event Page' });
+})
+
+// blog route
+
 
 // Start the server
 app.listen(PORT, () => {
