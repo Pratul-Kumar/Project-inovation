@@ -6,48 +6,34 @@
     <title>STUDENT COUNCIL</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
     <link rel="stylesheet" href="/stylesheet/Student.css">
-    <link rel="stylesheet" href="/stylesheet/navbaar.css">
+    <!-- <link rel="stylesheet" href="/stylesheet/navbaar.css"> -->
     <script src="javascript/navbaar.js"></script>
 
     
 </head>
 <body>
+<section class="header">
   <nav>
-  <div class="logo">
-      <img class="image-logo" src="/image folder/Student council png.png" title="council logo">
-      <h1>STUDENT COUNCIL</h1>
+      <a href="#"><img src="\image folder\Student council png.png" alt="Logo"></a>
+      <div class="nav-links" id="navLinks">
+          <i class="fa fa-times-circle close-icon" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="/"><button class="boton-elegante">Home</button></a></li>
+            <li><a href="/members"><button class="boton-elegante">Members</button></a></li>
+            <li><a href="/clubs"><button class="boton-elegante">Clubs</button></a></li>
+            <li><a href="/faculty"><button class="boton-elegante">Faculty</button></a></li>
+            <li><a href="/gallery"><button class="boton-elegante">Gallary</button></a></li>
+          </ul>
+      </div>
+      <i class="fa fa-bars menu-icon" onclick="showMenu()"></i>
+  </nav>
+  
+  <div class="text-box">
+      <h1>Technocrats Institute Of Technology</h1>
+      <p>'Best Placement Institute in Central India' by Shri Dr Sukanta Majumdar Hon'ble Minister of State for Education, <br>Government of India at The EduMeet & Excellence Awards 2024</p>
+      <a href="#" class="my-btn">Visit Us to know More</a>
   </div>
-  <ul class="nav-links">
-      <li><a href="/"><button class="boton-elegante">Home</button></a></li>
-      <li><a href="/members"><button class="boton-elegante">Members</button></a></li>
-      <li><a href="/clubs"><button class="boton-elegante">Clubs</button></a></li>
-      <li><a href="/faculty"><button class="boton-elegante">Faculty</button></a></li>
-      <li><a href="/gallery"><button class="boton-elegante">Gallary</button></a></li>
-  </ul>
-  <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-  </div>
-</nav>
-    <!-- Video Background Section with Navbar -->
-  <div class="video-background">
-    <!--<video autoplay muted loop id="background-video">
-      <source src="video.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  -->
-    <div class="banner-content">  
-    </div>
-  </div>
-
-  <!-- Parallax About Section -->
-  <div id="about" class="parallax-section">
-    <div class="container parallax-text">
-      <h2>About the Fest</h2>
-      <p>Our annual college fest celebrates talent, creativity, and innovation. Join us for workshops, cultural events, and more!</p>
-    </div>
-  </div>
+</section>
 
   <!-- Enhanced Carousel Section -->
   <div id="updateSection">
