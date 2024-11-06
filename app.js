@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 const { title } = require('process');
@@ -19,7 +18,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //home route
 app.get('/', (req, res) => {
+<<<<<<< HEAD
+  res.render('FaculityPage', { title: 'Home Page' });
+=======
   res.render('student council', { title: 'Home Page' });
+>>>>>>> 10595d4731bfa3f9e13df6048a1c2181bb507e32
 });
 
 //member routes
