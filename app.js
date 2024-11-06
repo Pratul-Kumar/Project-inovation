@@ -123,9 +123,12 @@ app.get('/IEEE Student chapter',(req,res)=>{
   res.render('IEEE Student chapter', { title: 'IEEE Student Chapter Page' });
 })
 
-///Developer team route
-app.get('/Dev team',(req,res)=>{
-  res.render('Dev team', { title: 'Developer Team Page' });
+
+
+//developer route
+
+app.get('/Dev',(req,res)=>{
+  res.render('Dev team', { title: 'Developer Page' });
 })
 
 
