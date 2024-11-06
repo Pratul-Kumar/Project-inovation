@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define a route
 app.get('/', (req, res) => {
-  res.render('Coding club', { title: 'Home Page' });
+  res.render('FaculityPage', { title: 'Home Page' });
 });
 
 // Start the server
