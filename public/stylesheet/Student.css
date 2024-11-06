@@ -331,12 +331,12 @@ footer p {
   height: 50px;
   width: 200px;
   position: relative;
-  background-color: transparent;
+  background-color: #c3b0b0;
   cursor: pointer;
   border: 2px solid #252525;
   overflow: hidden;
   border-radius: 30px;
-  color: #333;
+  color: #ab9595;
   transition: all 0.5s ease-in-out;
 }
 
@@ -344,6 +344,7 @@ footer p {
   z-index: 1;
   font-weight: 800;
   letter-spacing: 4px;
+  color: black;
 }
 
 .type1::after {
@@ -352,7 +353,7 @@ footer p {
   left: 0;
   top: 0;
   transition: all 0.5s ease-in-out;
-  background-color: #333;
+  background-color: #fff;
   border-radius: 30px;
   visibility: hidden;
   height: 10px;
