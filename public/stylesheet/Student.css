@@ -165,9 +165,9 @@ footer p {
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/image folder/front page images/student council.jpg');
   background-position: center center;
-  background-size: cover; /* Ensures the image fully covers the container */
-  background-repeat: no-repeat; /* Prevents tiling */
-  position: relative;
+  background-size: cover;
+  /*Ensurestheimagefullycoversthecontainer*/background-repeat: no-repeat;
+  /*Preventstiling*/position: relative;
 }
 
 
