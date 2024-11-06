@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 
@@ -16,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define a route
 app.get('/', (req, res) => {
-  res.render('Tech wizards.ejs', { title: 'Home Page' });
+  res.render('Coding club', { title: 'Home Page' });
 });
 
 // Start the server
