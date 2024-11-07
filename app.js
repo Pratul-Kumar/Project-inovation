@@ -27,7 +27,7 @@ app.get('/members', (req, res) => {
 
 // Faculty route
 app.get('/faculty', (req, res) => {
-  res.render('faculty page', { title: 'Faculty Page' });
+  res.render('FaculityPage', { title: 'Faculty Page' });
 });
 
 // Clubs route
@@ -127,7 +127,7 @@ app.get('/form', (req, res) => {
 
 // Event details route
 app.get('/event', (req, res) => {
-  res.render('Event Details+', { title: 'Event Page' });
+  res.render('Event Details', { title: 'Event Page' });
 });
 
 // Blog route (placeholder)
