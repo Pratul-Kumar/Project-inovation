@@ -130,6 +130,11 @@ app.get('/event', (req, res) => {
   res.render('Event Details', { title: 'Event Page' });
 });
 
+// Event details route
+app.get('/eventcoding', (req, res) => {
+  res.render('codeclash', { title: 'Event Page' });
+});
+
 // Blog route (placeholder)
 app.get('/blog', (req, res) => {
   res.send('Blog page coming soon!');
