@@ -56,12 +56,12 @@ app.get('/media', (req, res) => {
 });
 
 // Cultural Club route
-app.get('/cultural', (req, res) => {
+app.get('/Cultrul', (req, res) => {
   res.render('Cultrul', { title: 'Cultural Club Page' });
 });
 
 // Robotics Club route
-app.get('/robotics', (req, res) => {
+app.get('/Robotics', (req, res) => {
   res.render('Robotics', { title: 'Robotics Club Page' });
 });
 
@@ -71,53 +71,53 @@ app.get('/entrepreneurship', (req, res) => {
 });
 
 // Literary Club route
-app.get('/literary', (req, res) => {
+app.get('/Literary', (req, res) => {
   res.render('Literary club', { title: 'Literary Club Page' });
 });
 
 // Renewable Energy route
-app.get('/renewable', (req, res) => {
+app.get('/Renewable', (req, res) => {
   res.render('Renewable energy', { title: 'Renewable Energy Page' });
 });
 
 // Discipline Club route
-app.get('/discipline', (req, res) => {
+app.get('/Disipline', (req, res) => {
   res.render('Disipline club', { title: 'Discipline Club Page' });
 });
 
 // Alumni Relation Club route
-app.get('/alumni', (req, res) => {
+app.get('/Alimni', (req, res) => {
   res.render('Alimni relation club', { title: 'Alumni Relation Club Page' });
 });
 
 // Tech Wizards route
-app.get('/tech wizards', (req, res) => {
-  res.render('tech wizards', { title: 'Tech Wizards Club Page' });
+app.get('/Tech', (req, res) => {
+  res.render('Tech wizards', { title: 'Tech Wizards Club Page' });
 });
 
 // EV Club route
-app.get('/ev', (req, res) => {
-  res.render('ev club', { title: 'EV Club Page' });
+app.get('/EV', (req, res) => {
+  res.render('EV', { title: 'EV Club Page' });
 });
 
 // Music Club route
 app.get('/music', (req, res) => {
-  res.render('music club', { title: 'Music Club Page' });
+  res.render('music', { title: 'Music Club Page' });
 });
 
 // Dance Club route
-app.get('/dance', (req, res) => {
-  res.render('dance club', { title: 'Dance Club Page' });
+app.get('/Dance', (req, res) => {
+  res.render('Dance', { title: 'Dance Club Page' });
 });
 
 // IEEE Student Chapter route
-app.get('/ieee student chapter', (req, res) => {
-  res.render('ieee_student_chapter', { title: 'IEEE Student Chapter Page' });
+app.get('/IEEE Student chapter', (req, res) => {
+  res.render('IEEE Student chapter', { title: 'IEEE Student Chapter Page' });
 });
 
 // Developer route
-app.get('/dev', (req, res) => {
-  res.render('dev team', { title: 'Developer Page' });
+app.get('/Dev', (req, res) => {
+  res.render('Dev team', { title: 'Developer Page' });
 });
 
 // Form route
@@ -127,7 +127,7 @@ app.get('/form', (req, res) => {
 
 // Event details route
 app.get('/event', (req, res) => {
-  res.render('event details', { title: 'Event Page' });
+  res.render('Event Details+', { title: 'Event Page' });
 });
 
 // Blog route (placeholder)
