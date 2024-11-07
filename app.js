@@ -135,6 +135,14 @@ app.get('/eventcoding', (req, res) => {
   res.render('codeclash', { title: 'Event Page' });
 });
 
+// Event details dance route
+
+app.get('/eventdance', (req, res) => {
+  res.render('flash clash', { title: 'Event Page' });
+});
+
+// Event details renewable route
+
 // Blog route (placeholder)
 app.get('/blog', (req, res) => {
   res.send('Blog page coming soon!');
