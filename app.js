@@ -121,7 +121,7 @@ app.get('/Dance', (req, res) => {
 });
 
 // IEEE Student Chapter route
-app.get('/IEEE Student chapter', (req, res) => {
+app.get('/IEEE', (req, res) => {
   res.render('IEEE Student chapter', { title: 'IEEE Student Chapter Page' });
 });
 
