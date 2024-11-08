@@ -132,13 +132,13 @@ app.get('/event', (req, res) => {
 
 // Event details route
 app.get('/eventcoding', (req, res) => {
-  res.render('codeclash', { title: 'Event Page' });
+  res.render('Anwesha Event/codeclash', { title: 'Event Page' });
 });
 
 // Event details dance route
 
 app.get('/eventdance', (req, res) => {
-  res.render('flash clash', { title: 'Event Page' });
+  res.render('Anwesha Event/flash clash', { title: 'Event Page' });
 });
 
 // Event details renewable route
