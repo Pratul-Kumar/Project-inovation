@@ -1,8 +1,14 @@
 const express = require('express');
 const path = require('path');
+const connectdb = require('./config/db');  // Using CommonJS `require`
+const dotenv = require('dotenv');
+
+dotenv.config();
+connectdb();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
+
 
 // Set EJS as the templating engine
 app.set('view engine', 'ejs');
@@ -17,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Home route
 app.get('/', (req, res) => {
-  res.render('student council', { title: 'Home Page' });
+  res.render('form', { title: 'Home Page' });
 });
 
 // Member routes
