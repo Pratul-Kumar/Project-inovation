@@ -64,23 +64,7 @@
             outline: none;
             box-shadow: 0px 0px 5px 2px rgba(255, 204, 0, 0.5);
         }
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            margin-top: 15px;
-            background-color: #ffd700;
-            color: #333;
-            font-size: 1.1em;
-            border-radius: 5px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #ffa500;
-            color: #fff;
-        }
+        
         footer {
             text-align: center;
             background-color: #2a2a45;
@@ -88,6 +72,132 @@
             padding: 15px 0;
             margin-top: 20px;
         }
+        button{
+            background: #393e41;
+            border-radius: 10px;
+            
+        }
+        /* Payment button*/
+
+
+            /*Container*/
+
+            .bannerContainer {
+            position: relative;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 15px;
+            }
+
+            /*Banner */
+
+            .bannerContainer .banner {
+            background-color: #e7e5df;
+            height: 70px;
+            width: 250px;
+            border-radius: 10px;
+            position: relative;
+            overflow-y: hidden;
+            }
+
+            /*Loaders */
+
+            .bannerContainer .banner .loader {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            position: absolute;
+            }
+
+            .bannerContainer .banner .loader1 {
+            background-color: #393e41;
+            animation: loader 0.5s linear 0s;
+            }
+
+            .bannerContainer .banner .loader2 {
+            background-color: #44bba4;
+            animation: loader 0.5s linear 0.2s;
+            }
+
+            .bannerContainer .banner .loader3 {
+            background-color: #e7bb41;
+            animation: loader 0.5s linear 0.3s;
+            }
+
+            /*Main card*/
+
+            .bannerContainer .banner .mainCard {
+            width: 100%;
+            background-color: #e7e5df;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #393e41;
+            font-weight: bolder;
+            animation: loader 0.5s linear 0.4s;
+            border-radius: 10px;
+            }
+
+            .bannerContainer .banner span {
+            font-size: 29px;
+            font-weight: 900;
+            transform: translateY(-120px);
+            animation: appear 0.1s ease-in 0.9s forwards;
+            }
+
+            .bannerContainer .banner svg {
+            width: 30px;
+            transform: translateY(-100px);
+            animation: appear 0.1s ease-in 0.9s forwards;
+            }
+
+            .bannerContainer .banner .mainCard:hover > .secondCard {
+            height: 100%;
+            color: #e7e5df;
+            }
+
+            /* Second card */
+
+            .bannerContainer .banner .secondCard {
+            background-color: #393e41;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: transparent;
+            height: 0px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            }
+
+            /* Animations */
+
+            @keyframes loader {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
+            }
+
+            @keyframes appear {
+            from {
+                transform: translateY(-100px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+            }
+
     </style>
 </head>
 <body>
@@ -95,7 +205,7 @@
 <div class="container">
     <!-- Header Section -->
     <header>
-        <h1>Register for Technocrats Carnival 2024</h1>
+        <h1>Register for ANWESHA 2.0 </h1>
         <p>Be part of an exciting day filled with innovation, creativity, and teamwork!</p>
     </header>
 
@@ -156,7 +266,20 @@
             <div id="participantsDetails"></div>
 
             <!-- Submit Button -->
-            <button type="submit" class="submit-btn">Submit Registration</button>
+             
+                <div class="bannerContainer" type="submit">
+                      <div class="banner">
+                        <div class="loader loader1"></div>
+                        <div class="loader loader2"></div>
+                        <div class="loader loader3"></div>
+                        <div class="loader mainCard">
+                          <span>Proceed</span>
+                          <div class="loader secondCard">
+                            <span>For Payment</span>
+                          </div>
+                        </div>
+                      </div>
+                </div>
         </form>
     </section>
 </div>
@@ -170,30 +293,30 @@
     // Define max participants for each event and labels
     const eventMaxParticipants = {
         "ROBO RACE": ["SOLO"],
-        "ROBO WAR": ["GROUP"],
-        "HACKATHON": ["DUO", "GROUP"],
+        "ROBO WAR": ["SQUAD"],
+        "HACKATHON": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
         "CODE CLASH 3.0": ["SOLO"],
-        "FREE FIRE": ["SOLO", "GROUP"],
-        "BGMI": ["SOLO", "GROUP"],
+        "FREE FIRE": ["SOLO", "SQUAD-4-MEMBER"],
+        "BGMI": ["SOLO", "SQUAD-4-MEMBER"],
         "MUSICAL CHAIR": ["SOLO"],
         "RENEWABLE MODEL SHOWCASE": ["SOLO"],
-        "DUMCHARADE": ["DUO", "GROUP"],
-        "OPEN MIC": ["SOLO"],
+        "DUMCHARADE": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
+        "OPEN MIC": ["SOLO", "DUO", "TRIO", "SQUAD-4-MEMBER"],
         "STORY TELLING": ["SOLO"],
-        "CORPORATE CHALLENGE SHOWDOWN": ["SOLO", "GROUP"],
-        "ENTREPRENEURSHIP SALES STALL": ["SOLO", "GROUP"],
-        "ESCAPE ROOM/ BUSINESS": ["DUO", "GROUP"],
+        "CORPORATE CHALLENGE SHOWDOWN": ["DUO", "SQUAD-5-MEMBER"],
+        "ENTREPRENEURSHIP SALES STALL": ["SOLO", "DUO", "TRIO", "SQUAD-4-MEMBER", "SQUAD-5-MEMBER"],
+        "ESCAPE ROOM/ BUSINESS": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
         "ENTREPRENEURIAL MEME CONTEST": ["SOLO", "DUO"],
         "RUNNING COMPETITION/ MARATHON": ["SOLO"],
-        "TUG OF WAR": ["DUO", "GROUP"],
-        "DEBATE COMPETITION": ["GROUP"],
-        "TECHNICAL PRESENTATION": ["SOLO", "GROUP"],
+        "TUG OF WAR": ["DUO", "SQUAD-4-MEMBER"],
+        "DEBATE COMPETITION": ["SQUAD-4-MEMBER"],
+        "TECHNICAL PRESENTATION": ["SOLO", "SQUAD-4-MEMBER"],
         "CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING": ["SOLO"],
         "SCREEN TO SPEECH" : ["SOLO"],
         "OUT OF BOX" : ["SOLO"],
-        "FLASH CLASH OF STYLES: THE DANCE FACE-OFF": ["SOLO", "DUO", "GROUP"],
-        "TECH THEME TREASURE HUNT": ["GROUP"],
-        "SKYHIGH SNAP AND SOLVE": ["GROUP"],
+        "FLASH CLASH OF STYLES: THE DANCE FACE-OFF": ["SOLO", "DUO", "SQUAD-4-MEMBER"],
+        "TECH THEME TREASURE HUNT": ["SQUAD-4-MEMBER"],
+        "SKYHIGH SNAP AND SOLVE": ["SOLO", "DUO", "TRIO"],
         "HOVERHUNT": ["SOLO"],
         "TECHNICAL QUIZ": ["SOLO"],
         // Add more events with their max participants here
@@ -228,7 +351,7 @@
         participantsDetails.innerHTML = "";
 
         // Show fields based on participant type
-        if (numberSelect === "SOLO") {
+        if (numberSelect === "solo") {
             participantsDetails.innerHTML = `
                 <div class="form-section">
                     <h3>Participant Information</h3>
@@ -246,7 +369,7 @@
                     </div>
                 </div>
             `;
-        } else if (numberSelect === "DUO") {
+        } else if (numberSelect === "duo") {
             participantsDetails.innerHTML = `
                 <div class="form-section">
                     <h3>Team Leader Information</h3>
@@ -273,7 +396,43 @@
                     </div>
                 </div>
             `;
-        } else if (numberSelect === "GROUP") {
+        } else if (numberSelect === "trio") {
+            participantsDetails.innerHTML = `
+                <div class="form-section">
+                    <h3>Team Leader Information</h3>
+                    <div class="form-group">
+                        <label for="leaderName">Name</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEnrollment">Enrollment Number</label>
+                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <h3>Team Members Information</h3>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 1</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 1</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 2</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 2</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                </div>
+            `;
+        }
+        else if (numberSelect === "squad-4-member") {
             participantsDetails.innerHTML = `
                 <div class="form-section">
                     <h3>Team Leader Information</h3>
@@ -290,37 +449,101 @@
                         <input type="email" id="leaderEmail" name="leaderEmail" required>
                     </div>
                     <h3>Additional Team Members</h3>
-                    <div id="teamMembersContainer"></div>
                     <div class="form-group">
-                        <label for="numTeamMembers">Number of Additional Members:</label>
-                        <input type="number" id="numTeamMembers" name="numTeamMembers" min="1" max="10" onchange="addTeamMembersFields()">
+                        <label for="memberName">Name of Member 1</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 1</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 2</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 2</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 3</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 3</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                </div>
+            `;
+        }
+        else if (numberSelect === "squad-5-member") {
+            participantsDetails.innerHTML = `
+                <div class="form-section">
+                    <h3>Team Leader Information</h3>
+                    <div class="form-group">
+                        <label for="leaderName">Name</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEnrollment">Enrollment Number</label>
+                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <h3>Additional Team Members</h3>
+                    <div class="form-group">
+                        <label for="leaderName">Name</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEnrollment">Enrollment Number</label>
+                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <h3>Additional Team Members</h3>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 1</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 1</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 2</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 2</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 3</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 3</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberName">Name of Member 4</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number of Member 4</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
                     </div>
                 </div>
             `;
         }
     }
 
-    // Function to dynamically add fields for additional team members
-    function addTeamMembersFields() {
-        const teamMembersContainer = document.getElementById("teamMembersContainer");
-        const numMembers = document.getElementById("numTeamMembers").value;
-
-        // Clear any existing member fields
-        teamMembersContainer.innerHTML = "";
-
-        // Create fields for each additional member
-        for (let i = 1; i <= numMembers; i++) {
-            teamMembersContainer.innerHTML += `
-                <div class="form-group">
-                    <label for="member${i}Name">Team Member ${i} Name</label>
-                    <input type="text" id="member${i}Name" name="member${i}Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="member${i}Enrollment">Team Member ${i} Enrollment Number</label>
-                    <input type="text" id="member${i}Enrollment" name="member${i}Enrollment" required>
-                </div> `;
-            }
-        }
+   
 </script>
 
 </body>
