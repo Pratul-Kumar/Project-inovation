@@ -1,53 +1,12 @@
-<<<<<<< HEAD:views/Robo_race.ejs
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robo Race</title>
-    <link rel="stylesheet" href="/stylesheet/Event page.css">
-</head>
-<body>
-
-<div class="container">
-    <!-- Header Section -->
-    <header>
-        <h1>ANWESHA 2.0 - Robo Race</h1>
-        <p>Organized by the Student Council TIT</p>
-        <p>Venue: Technocrats Group of Institutes</p>
-        <a href="">
-            <button>Register Now</button>
-        </a>
-    </header>
-
-    <!-- Event Description Section -->
-    <section class="section">
-        <h2>Robo Race</h2>
-        <p>Join the thrilling Robo Race! Compete solo or in teams of up to 5 for a high-speed challenge. Entry Fee: ₹300 per team</p>
-        <h5 class="coordinater">
-            Coordinators:<br/>
-            Ayan Khan: 7879206795<br/>
-            Ashish: 79798 01929
-        </h5>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy;Technocrats Group of Institutes. All rights reserved.</p>
-    </footer>
-</div>
-
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robo Race</title>
+    <title>Technical Presentation</title>
     <link rel="stylesheet" href="/stylesheet/Event page.css">
     <style>
+        /* From Uiverse.io by doniaskima */
         .btn-53,
         .btn-53 *,
         .btn-53 :after,
@@ -61,6 +20,7 @@
         .btn-53 {
             -webkit-tap-highlight-color: transparent;
             -webkit-appearance: button;
+            appearance: button;
             background-color: #000;
             background-image: none;
             color: #fff;
@@ -72,6 +32,7 @@
             line-height: 1.5;
             margin: 0;
             -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+            mask-image: radial-gradient(#000, #fff);
             padding: 0;
         }
 
@@ -84,7 +45,7 @@
         }
 
         .btn-53 svg {
-            display: block;
+            display: inline-block;
             vertical-align: middle;
         }
 
@@ -163,11 +124,11 @@
 <div class="container">
     <!-- Header Section -->
     <header>
-        <h1>ANWESHA 2.0 - Robo Race</h1>
+        <h1>ANWESHA 2.0 - Technical Presentation</h1>
         <p>Organized by the Student Council TIT</p>
         <p>Venue: Technocrats Group of Institutes</p>
-        <a href="<%= registerUrl %>">
-            <!-- New Button Style -->
+        <a href="/form.ejs">
+            <!-- Using the new button design -->
             <button class="btn-53">
                 <div class="original">Register Now</div>
                 <div class="letters">
@@ -179,21 +140,31 @@
 
     <!-- Event Description Section -->
     <section class="section">
-        <h2>Robo Race</h2>
-        <p>Join the thrilling Robo Race! Compete solo or in teams of up to 5 for a high-speed challenge. Entry Fee: ₹300 per team</p>
-        <h5 class="coordinater">
+        <h2>Technical Presentation</h2>
+        <p>Present on any one of the following topics:</p>
+        <ul>
+            <li>KAVACH SYSTEM IN INDIAN RAILWAYS</li>
+            <li>REVOLUTION OF FLIP PHONES IN INDIA</li>
+        </ul>
+        <p>Winners will receive certificates and medals. All participants will get an E-Certificate.</p>
+        <h5 class="coordinator">
+            IEEE CLUB<br/>
             Coordinators:<br/>
-            Ayan Khan: 7879206795<br/>
-            Ashish: 79798 01929
+            Nishant Manjhi: 9311306822<br/>
+            Shivendra Parihar: 7804892205
         </h5>
+        <p>Fees:</p>
+        <ul>
+            <li>Single: ₹30</li>
+            <li>Team (2 participants): ₹50</li>
+        </ul>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; Technocrats Group of Institutes. All rights reserved.</p>
+        <p>&copy; 2024 Technocrats Group of Institutes. All rights reserved.</p>
     </footer>
 </div>
 
 </body>
 </html>
->>>>>>> 2ceb35e3ed59b5377dce16b20f6507e61366bc30:Robo_race.ejs
