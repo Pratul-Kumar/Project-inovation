@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technocrats Carnival Registration</title>
+    <title>Registration for Anwesha 2.0</title>
     <style>
         /* Basic Styles */
         body {
@@ -121,36 +121,60 @@
                 <input type="email" id="email" name="email" required>
             </div>
 
-            <!-- Branch -->
-            <div class="form-group">
-                <label for="branch">Branch</label>
-                <input type="text" id="branch" name="branch" required>
-            </div>
-
             <!-- College -->
             <div class="form-group">
                 <label for="college">College</label>
                 <input type="text" id="college" name="college" required>
             </div>
 
-            <!-- Year Selection -->
+            <!-- Event Name -->
             <div class="form-group">
-                <label for="year">Year</label>
-                <select id="year" name="year" required onchange="showEvents()">
-                    <option value="" disabled selected>Select your Year</option>
-                    <option value="1">1st Year</option>
-                    <option value="2">2nd Year</option>
-                    <option value="3">3rd Year</option>
+                <label for="year">Events List</label>
+                <select id="year" name="year" required>
+                    <option value="">Select Event</option>
+                    <option value="1">ROBO RACE</option>
+                    <option value="2">ROBO WAR</option>
+                    <option value="3">HACKATHON</option>
+                    <option value="4">CODE CLASH 3.0</option>
+                    <option value="5">FREE FIRE</option>
+                    <option value="6">BGMI</option>
+                    <option value="7">MUSICAL CHAIR</option>
+                    <option value="8">RENEWABLE MODEL SHOWCASE</option>
+                    <option value="9">DUMCHARADE</option>
+                    <option value="10">OPEN MIC</option>
+                    <option value="11">STORY TELLING</option>
+                    <option value="12">CORPORATE CHALLENGE SHOWDOWN</option>
+                    <option value="13">ENTREPRENEURSHIP SALES STALL</option>
+                    <option value="14">ESCAPE ROOM/ BUSINESS</option>
+                    <option value="15">ENTREPRENEURIAL MEME CONTEST</option>
+                    <option value="16">RUNNING COMPETITION/ MARATHON</option>
+                    <option value="17">TUG OF WAR</option>
+                    <option value="18">DEBATE COMPETITION</option>
+                    <option value="19">TECHNICAL PRESENTATION</option>
+                    <option value="20">CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING</option>
+                    <option value="21">SCREEN TO SPEECH</option>
+                    <option value="22">OUT OF BOX</option>
+                    <option value="23">FLASH CLASH OF STYLES: THE DANNCE FACE-OFF</option>
+                    <option value="24">TECH THEME TREASURE HUNT</option>
+                    <option value="25">SKYHIGH SNAP AND SOLVE</option>
+                    <option value="26">HOVERHUNT</option>
+                    <option value="27">TECHNICAL QUIZ</option>
                 </select>
             </div>
 
-            <!-- Event Name (Dynamic Options) -->
+            <!-- NUMBER OF PARTICIPANTS -->
             <div class="form-group">
-                <label for="event">Event Name</label>
-                <select id="event" name="event" required>
-                    <option value="" disabled selected>Select an Event</option>
+                <label for="number">Number of Participants</label>
+                <select id="number" name="number" onchange="generateParticipantFields()" required>
+                    <option value="">Select </option>
+                    <option value="1">Solo</option>
+                    <option value="2">Duo</option>
+                    <option value="3">Trio</option>
+                    <option value="4">Team</option>
                 </select>
             </div>
+
+            <div id="participantsContainer"></div>
 
             <!-- Submit Button -->
             <button type="submit" class="submit-btn">Submit Registration</button>
@@ -164,39 +188,48 @@
 </footer>
 
 <script>
-    // Define event options for each year
-    const eventsByYear = {
-        "1": [
-            { value: "Craft Carnival", text: "Craft Carnival" },
-            { value: "Super Airways", text: "Super Airways" },
-            { value: "Action Replay", text: "Action Replay" }
-        ],
-        "2": [
-            { value: "Screen to Speech", text: "Screen to Speech" },
-            { value: "Out of the Box", text: "Out of the Box" }
-        ],
-        "3": [
-            { value: "Corporate Ramp Walk", text: "Corporate Ramp Walk" }
-        ]
-    };
+    // Define number of participants options
+    function generateParticipantFields() {
+        const numParticipants = parseInt(document.getElementById("number").value);
+        const participantsContainer = document.getElementById("participantsContainer");
 
-    function showEvents() {
-        // Get selected year
-        const year = document.getElementById("year").value;
-        // Get the event select element
-        const eventSelect = document.getElementById("event");
+        // Clear previous participant fields
+        participantsContainer.innerHTML = "";
 
-        // Clear current options
-        eventSelect.innerHTML = '<option value="" disabled selected>Select an Event</option>';
+        // Generate input fields for each participant
+        for (let i = 1; i <= numParticipants; i++) {
+            const participantDiv = document.createElement("div");
+            participantDiv.classList.add("form-group");
 
-        // Populate event options based on selected year
-        if (eventsByYear[year]) {
-            eventsByYear[year].forEach(event => {
-                const option = document.createElement("option");
-                option.value = event.value;
-                option.textContent = event.text;
-                eventSelect.appendChild(option);
-            });
+            const nameLabel = document.createElement("label");
+            nameLabel.innerText = `Participant ${i} Name`;
+            const nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameInput.name = `participant${i}_name`;
+            nameInput.required = true;
+
+            const enrollmentLabel = document.createElement("label");
+            enrollmentLabel.innerText = `Participant ${i} Enrollment`;
+            const enrollmentInput = document.createElement("input");
+            enrollmentInput.type = "text";
+            enrollmentInput.name = `participant${i}_enrollment`;
+            enrollmentInput.required = true;
+
+            const yearLabel = document.createElement("label");
+            yearLabel.innerText = `Participant ${i} Year`;
+            const yearInput = document.createElement("input");
+            yearInput.type = "text";
+            yearInput.name = `participant${i}_year`;
+            yearInput.required = true;
+
+            participantDiv.appendChild(nameLabel);
+            participantDiv.appendChild(nameInput);
+            participantDiv.appendChild(enrollmentLabel);
+            participantDiv.appendChild(enrollmentInput);
+            participantDiv.appendChild(yearLabel);
+            participantDiv.appendChild(yearInput);
+
+            participantsContainer.appendChild(participantDiv);
         }
     }
 </script>
