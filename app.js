@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Home route
 app.get('/', (req, res) => {
-  res.render('form', { title: 'Home Page' });
+  res.render('student council', { title: 'Home Page' });
 });
 
 // Member routes
@@ -50,6 +50,10 @@ app.get('/gallery', (req, res) => {
 app.get('/coding', (req, res) => {
   res.render('Coding club', { title: 'Coding Club Page' });
 });
+
+app.get('/Quiz ',(req, res) => {
+  res.render('Anwesha Event/Technical Quiz ', { title: 'Quiz Page' });
+})
 
 // Drone Club route
 app.get('/drone', (req, res) => {
@@ -163,11 +167,28 @@ app.get('/chair', (req, res) => {
   res.render('Anwesha Event/Musical Chair', { title: 'Musical Chair Page' });
 });
 
+app.get('/race', (req, res) => {
+  res.render('Anwesha Event/roborace', { title: 'race Page' });
+});
+
+app.get('/war', (req, res) => {
+  res.render('Anwesha Event/robowar', { title: 'war Page' });
+});
+
+app.get('/presentation', (req, res) => {
+  res.render('Anwesha Event/technical presentation', { title: 'Presentation Page' });
+})
+
 //Anwesha Event/Renewable Model Showcase.ejs route
 
 app.get('/modelshowcase', (req, res) => {
   res.render('Anwesha Event/Renewable Model Showcase', { title: 'Model Showcase Page' });
 });
+
+app.get('/TEASERQUEST', (req, res) => {
+  res.render('Anwesha Event/TEASERQUEST', { title: 'TEASERQUEST Page' });
+})
+
 
 // Dumb Charades route
 
