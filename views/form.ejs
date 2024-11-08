@@ -103,23 +103,6 @@
     <section class="form-section">
         <h2>Registration Form</h2>
         <form action="#" method="post">
-            <!-- Name -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <!-- Enrollment Number -->
-            <div class="form-group">
-                <label for="enrollment">Enrollment Number</label>
-                <input type="text" id="enrollment" name="enrollment" required>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email ID</label>
-                <input type="email" id="email" name="email" required>
-            </div>
 
             <!-- College -->
             <div class="form-group">
@@ -129,52 +112,48 @@
 
             <!-- Event Name -->
             <div class="form-group">
-                <label for="year">Events List</label>
-                <select id="year" name="year" required>
+                <label for="events">Events List</label>
+                <select id="events" name="events" onchange="updateParticipantsOption()" required>
                     <option value="">Select Event</option>
-                    <option value="1">ROBO RACE</option>
-                    <option value="2">ROBO WAR</option>
-                    <option value="3">HACKATHON</option>
-                    <option value="4">CODE CLASH 3.0</option>
-                    <option value="5">FREE FIRE</option>
-                    <option value="6">BGMI</option>
-                    <option value="7">MUSICAL CHAIR</option>
-                    <option value="8">RENEWABLE MODEL SHOWCASE</option>
-                    <option value="9">DUMCHARADE</option>
-                    <option value="10">OPEN MIC</option>
-                    <option value="11">STORY TELLING</option>
-                    <option value="12">CORPORATE CHALLENGE SHOWDOWN</option>
-                    <option value="13">ENTREPRENEURSHIP SALES STALL</option>
-                    <option value="14">ESCAPE ROOM/ BUSINESS</option>
-                    <option value="15">ENTREPRENEURIAL MEME CONTEST</option>
-                    <option value="16">RUNNING COMPETITION/ MARATHON</option>
-                    <option value="17">TUG OF WAR</option>
-                    <option value="18">DEBATE COMPETITION</option>
-                    <option value="19">TECHNICAL PRESENTATION</option>
-                    <option value="20">CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING</option>
-                    <option value="21">SCREEN TO SPEECH</option>
-                    <option value="22">OUT OF BOX</option>
-                    <option value="23">FLASH CLASH OF STYLES: THE DANNCE FACE-OFF</option>
-                    <option value="24">TECH THEME TREASURE HUNT</option>
-                    <option value="25">SKYHIGH SNAP AND SOLVE</option>
-                    <option value="26">HOVERHUNT</option>
-                    <option value="27">TECHNICAL QUIZ</option>
+                    <option value="ROBO RACE">ROBO RACE</option>
+                    <option value="ROBO WAR">ROBO WAR</option>
+                    <option value="HACKATHON">HACKATHON</option>
+                    <option value="CODE CLASH 3.0">CODE CLASH 3.0</option>
+                    <option value="FREE FIRE">FREE FIRE</option>
+                    <option value="BGMI">BGMI</option>
+                    <option value="MUSICAL CHAIR">MUSICAL CHAIR</option>
+                    <option value="RENEWABLE MODEL SHOWCASE">RENEWABLE MODEL SHOWCASE</option>
+                    <option value="DUMCHARADE">DUMCHARADE</option>
+                    <option value="OPEN MIC">OPEN MIC</option>
+                    <option value="STORY TELLING">STORY TELLING</option>
+                    <option value="CORPORATE CHALLENGE SHOWDOWN">CORPORATE CHALLENGE SHOWDOWN</option>
+                    <option value="ENTREPRENEURSHIP SALES STALL">ENTREPRENEURSHIP SALES STALL</option>
+                    <option value="ESCAPE ROOM/ BUSINESS">ESCAPE ROOM/ BUSINESS</option>
+                    <option value="ENTREPRENEURIAL MEME CONTEST">ENTREPRENEURIAL MEME CONTEST</option>
+                    <option value="RUNNING COMPETITION/ MARATHON">RUNNING COMPETITION/ MARATHON</option>
+                    <option value="TUG OF WAR">TUG OF WAR</option>
+                    <option value="DEBATE COMPETITION">DEBATE COMPETITION</option>
+                    <option value="TECHNICAL PRESENTATION">TECHNICAL PRESENTATION</option>
+                    <option value="CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING">CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING</option>
+                    <option value="SCREEN TO SPEECH">SCREEN TO SPEECH</option>
+                    <option value="OUT OF BOX">OUT OF BOX</option>
+                    <option value="FLASH CLASH OF STYLES: THE DANCE FACE-OFF">FLASH CLASH OF STYLES: THE DANNCE FACE-OFF</option>
+                    <option value="TECH THEME TREASURE HUNT">TECH THEME TREASURE HUNT</option>
+                    <option value="SKYHIGH SNAP AND SOLVE">SKYHIGH SNAP AND SOLVE</option>
+                    <option value="HOVERHUNT">HOVERHUNT</option>
+                    <option value="TECHNICAL QUIZ">TECHNICAL QUIZ</option>
                 </select>
             </div>
 
             <!-- NUMBER OF PARTICIPANTS -->
             <div class="form-group">
                 <label for="number">Number of Participants</label>
-                <select id="number" name="number" onchange="generateParticipantFields()" required>
+                <select id="number" name="number" onchange="displayParticipantDetails()" required>
                     <option value="">Select </option>
-                    <option value="1">Solo</option>
-                    <option value="2">Duo</option>
-                    <option value="3">Trio</option>
-                    <option value="4">Team</option>
                 </select>
             </div>
 
-            <div id="participantsContainer"></div>
+            <div id="participantsDetails"></div>
 
             <!-- Submit Button -->
             <button type="submit" class="submit-btn">Submit Registration</button>
@@ -188,50 +167,160 @@
 </footer>
 
 <script>
-    // Define number of participants options
-    function generateParticipantFields() {
-        const numParticipants = parseInt(document.getElementById("number").value);
-        const participantsContainer = document.getElementById("participantsContainer");
+    // Define max participants for each event and labels
+    const eventMaxParticipants = {
+        "ROBO RACE": ["SOLO"],
+        "ROBO WAR": ["GROUP"],
+        "HACKATHON": ["DUO", "GROUP"],
+        "CODE CLASH 3.0": ["SOLO"],
+        "FREE FIRE": ["SOLO", "GROUP"],
+        "BGMI": ["SOLO", "GROUP"],
+        "MUSICAL CHAIR": ["SOLO"],
+        "RENEWABLE MODEL SHOWCASE": ["SOLO"],
+        "DUMCHARADE": ["DUO", "GROUP"],
+        "OPEN MIC": ["SOLO"],
+        "STORY TELLING": ["SOLO"],
+        "CORPORATE CHALLENGE SHOWDOWN": ["SOLO", "GROUP"],
+        "ENTREPRENEURSHIP SALES STALL": ["SOLO", "GROUP"],
+        "ESCAPE ROOM/ BUSINESS": ["DUO", "GROUP"],
+        "ENTREPRENEURIAL MEME CONTEST": ["SOLO", "DUO"],
+        "RUNNING COMPETITION/ MARATHON": ["SOLO"],
+        "TUG OF WAR": ["DUO", "GROUP"],
+        "DEBATE COMPETITION": ["GROUP"],
+        "TECHNICAL PRESENTATION": ["SOLO", "GROUP"],
+        "CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING": ["SOLO"],
+        "SCREEN TO SPEECH" : ["SOLO"],
+        "OUT OF BOX" : ["SOLO"],
+        "FLASH CLASH OF STYLES: THE DANCE FACE-OFF": ["SOLO", "DUO", "GROUP"],
+        "TECH THEME TREASURE HUNT": ["GROUP"],
+        "SKYHIGH SNAP AND SOLVE": ["GROUP"],
+        "HOVERHUNT": ["SOLO"],
+        "TECHNICAL QUIZ": ["SOLO"],
+        // Add more events with their max participants here
+    };
 
-        // Clear previous participant fields
-        participantsContainer.innerHTML = "";
+    function updateParticipantsOption() {
+        const eventSelect = document.getElementById("events");
+        const numberSelect = document.getElementById("number");
+        const selectedEvent = eventSelect.value;
 
-        // Generate input fields for each participant
-        for (let i = 1; i <= numParticipants; i++) {
-            const participantDiv = document.createElement("div");
-            participantDiv.classList.add("form-group");
+        // Clear current options in the "Number of Participants" dropdown
+        numberSelect.innerHTML = '<option value="">Select</option>';
 
-            const nameLabel = document.createElement("label");
-            nameLabel.innerText = `Participant ${i} Name`;
-            const nameInput = document.createElement("input");
-            nameInput.type = "text";
-            nameInput.name = `participant${i}_name`;
-            nameInput.required = true;
-
-            const enrollmentLabel = document.createElement("label");
-            enrollmentLabel.innerText = `Participant ${i} Enrollment`;
-            const enrollmentInput = document.createElement("input");
-            enrollmentInput.type = "text";
-            enrollmentInput.name = `participant${i}_enrollment`;
-            enrollmentInput.required = true;
-
-            const yearLabel = document.createElement("label");
-            yearLabel.innerText = `Participant ${i} Year`;
-            const yearInput = document.createElement("input");
-            yearInput.type = "text";
-            yearInput.name = `participant${i}_year`;
-            yearInput.required = true;
-
-            participantDiv.appendChild(nameLabel);
-            participantDiv.appendChild(nameInput);
-            participantDiv.appendChild(enrollmentLabel);
-            participantDiv.appendChild(enrollmentInput);
-            participantDiv.appendChild(yearLabel);
-            participantDiv.appendChild(yearInput);
-
-            participantsContainer.appendChild(participantDiv);
+        // Populate the dropdown based on the selected event's participant options
+        if (eventMaxParticipants[selectedEvent]) {
+            const participantOptions = eventMaxParticipants[selectedEvent];
+            participantOptions.forEach(option => {
+                const newOption = document.createElement("option");
+                newOption.value = option.toLowerCase(); // use lowercase for value
+                newOption.textContent = option;
+                numberSelect.appendChild(newOption);
+            });
         }
     }
+
+    // Define number of participants options
+    function displayParticipantDetails() {
+        const numberSelect = document.getElementById("number").value;
+        const participantsDetails = document.getElementById("participantsDetails");
+
+        // Clear previous participant details
+        participantsDetails.innerHTML = "";
+
+        // Show fields based on participant type
+        if (numberSelect === "SOLO") {
+            participantsDetails.innerHTML = `
+                <div class="form-section">
+                    <h3>Participant Information</h3>
+                    <div class="form-group">
+                        <label for="soloName">Name</label>
+                        <input type="text" id="soloName" name="soloName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="soloEnrollment">Enrollment Number</label>
+                        <input type="text" id="soloEnrollment" name="soloEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="soloEmail">Email ID</label>
+                        <input type="email" id="soloEmail" name="soloEmail" required>
+                    </div>
+                </div>
+            `;
+        } else if (numberSelect === "DUO") {
+            participantsDetails.innerHTML = `
+                <div class="form-section">
+                    <h3>Team Leader Information</h3>
+                    <div class="form-group">
+                        <label for="leaderName">Name</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEnrollment">Enrollment Number</label>
+                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <h3>Team Member Information</h3>
+                    <div class="form-group">
+                        <label for="memberName">Name</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberEnrollment">Enrollment Number</label>
+                        <input type="text" id="memberEnrollment" name="memberEnrollment" required>
+                    </div>
+                </div>
+            `;
+        } else if (numberSelect === "GROUP") {
+            participantsDetails.innerHTML = `
+                <div class="form-section">
+                    <h3>Team Leader Information</h3>
+                    <div class="form-group">
+                        <label for="leaderName">Name</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEnrollment">Enrollment Number</label>
+                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <h3>Additional Team Members</h3>
+                    <div id="teamMembersContainer"></div>
+                    <div class="form-group">
+                        <label for="numTeamMembers">Number of Additional Members:</label>
+                        <input type="number" id="numTeamMembers" name="numTeamMembers" min="1" max="10" onchange="addTeamMembersFields()">
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Function to dynamically add fields for additional team members
+    function addTeamMembersFields() {
+        const teamMembersContainer = document.getElementById("teamMembersContainer");
+        const numMembers = document.getElementById("numTeamMembers").value;
+
+        // Clear any existing member fields
+        teamMembersContainer.innerHTML = "";
+
+        // Create fields for each additional member
+        for (let i = 1; i <= numMembers; i++) {
+            teamMembersContainer.innerHTML += `
+                <div class="form-group">
+                    <label for="member${i}Name">Team Member ${i} Name</label>
+                    <input type="text" id="member${i}Name" name="member${i}Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="member${i}Enrollment">Team Member ${i} Enrollment Number</label>
+                    <input type="text" id="member${i}Enrollment" name="member${i}Enrollment" required>
+                </div> `;
+            }
+        }
 </script>
 
 </body>
