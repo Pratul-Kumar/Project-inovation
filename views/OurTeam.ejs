@@ -27,9 +27,21 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             grid-gap: 20px;
             animation: fadeIn 2s;
+            overflow: hidden;
+        }
+        .team-grid-head {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 100px;
+            animation: fadeIn 2s;
+            margin-bottom: 60px;
+            margin-top: 20px;
+            margin-left: 130px;
+            margin-right: 130px;
+            overflow: hidden;
         }
 
         @keyframes fadeIn {
@@ -67,14 +79,13 @@
         
 
         .team-member img {
-            width: 100%;
+            height: 180px;
             object-fit: contain;
             margin-bottom: 10px;
             aspect-ratio: 1/1;
             border-radius: 50%;
             
         }
-
         
         .team-member h3 {
             color: #333;
@@ -164,21 +175,26 @@
     </nav>
 
     <div class="container">
+        <div class="heading-barriers"><h1>OFFICE BEARER HEAD</h1></div>
+
+        <div class="team-grid-head">
+            <div class="team-member">
+                <img src="/image folder/club members/Prabhat kumar.jpg" alt="Prabhat kumar">
+                <h3>Prabhat kumar</h3>
+                <p>President</p>
+            </div>
+              <div class="team-member">
+                <img src="/image folder/club members/TIKESH KARDATE (1) - Tikesh Kardate.jpg" alt="Tikesh Kardate">
+                <h3>Tikesh Kardate</h3>
+                <p>General Secretary</p>
+              </div>
+        </div>
+
+
         <div class="heading-barriers"><h1>OFFICE BEARER</h1></div>
-        
-        
         <div class="team-grid">
           <!-- Team Member 1 -->
-          <div class="team-member">
-            <img src="/image folder/club members/Prabhat kumar.jpg" alt="Prabhat kumar">
-            <h3>Prabhat kumar</h3>
-            <p>President</p>
-        </div>
-          <div class="team-member">
-            <img src="/image folder/club members/TIKESH KARDATE (1) - Tikesh Kardate.jpg" alt="Tikesh Kardate">
-            <h3>Tikesh Kardate</h3>
-            <p>General Secretary</p>
-          </div>
+          
           <div class="team-member">
             <img src="/image folder/club members/sahil bhaiya.jpg" alt="Sahil Kumar">
             <h3>Sahil Kumar</h3>

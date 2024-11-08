@@ -255,6 +255,16 @@
                 </select>
             </div>
 
+            <!-- Sub-Event (for Craft Carnival) -->
+            <div class="form-group" id="carnivalSubOptions" style="display: none;">
+                <label for="subEvent">Choose Sub-Event</label>
+                <select id="subEvent" name="subEvent">
+                    <option value="">Select Sub-Event</option>
+                    <option value="Poster Making">Poster Making</option>
+                    <option value="Slogan Writing">Slogan Writing</option>
+                </select>
+            </div>
+
             <!-- NUMBER OF PARTICIPANTS -->
             <div class="form-group">
                 <label for="number">Number of Participants</label>
@@ -290,6 +300,8 @@
 </footer>
 
 <script>
+    
+
     // Define max participants for each event and labels
     const eventMaxParticipants = {
         "ROBO RACE": ["SOLO"],
@@ -326,9 +338,17 @@
         const eventSelect = document.getElementById("events");
         const numberSelect = document.getElementById("number");
         const selectedEvent = eventSelect.value;
+        const carnivalSubOptions = document.getElementById("carnivalSubOptions");
 
         // Clear current options in the "Number of Participants" dropdown
         numberSelect.innerHTML = '<option value="">Select</option>';
+
+        // Show sub-options for "Carnival Craft" only
+        if (selectedEvent === "CARNIVAL CRAFT/ POSTER MAKING, SLOGAN WRITING") {
+            carnivalSubOptions.style.display = "block";
+        } else {
+            carnivalSubOptions.style.display = "none";
+        }
 
         // Populate the dropdown based on the selected event's participant options
         if (eventMaxParticipants[selectedEvent]) {
@@ -492,19 +512,7 @@
                         <label for="leaderEmail">Email ID</label>
                         <input type="email" id="leaderEmail" name="leaderEmail" required>
                     </div>
-                    <h3>Additional Team Members</h3>
-                    <div class="form-group">
-                        <label for="leaderName">Name</label>
-                        <input type="text" id="leaderName" name="leaderName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="leaderEnrollment">Enrollment Number</label>
-                        <input type="text" id="leaderEnrollment" name="leaderEnrollment" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="leaderEmail">Email ID</label>
-                        <input type="email" id="leaderEmail" name="leaderEmail" required>
-                    </div>
+                    
                     <h3>Additional Team Members</h3>
                     <div class="form-group">
                         <label for="memberName">Name of Member 1</label>
