@@ -12,10 +12,7 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-<<<<<<< HEAD
-    "nodemon": "^3.1.7"
-=======
+    "nodemon": "^3.1.7",
     "student-council": "file:"
->>>>>>> 4849e6d24d7bb2cfc7ba9fbf1e3913133d0b508a
   }
 }

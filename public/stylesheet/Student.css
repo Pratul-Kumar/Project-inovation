@@ -19,6 +19,12 @@
   margin-bottom: 5vw;
 }
 
+#updateSection a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
 #updateSection .elem {
   width: 100%;
   height: 16vh;
