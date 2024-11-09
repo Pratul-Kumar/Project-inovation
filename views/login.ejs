@@ -46,25 +46,25 @@ p {
 
 .social-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: row;
+  gap: 35px;
 }
 
 .social-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
   padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .social-button img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .social-button.facebook {
@@ -73,12 +73,12 @@ p {
 }
 
 .social-button.google {
-  background-color: #db4437;
+  background-color: #df3421;
   color: white;
 }
 
 .social-button.github {
-  background-color: #333333;
+  background-color: #c4b4b4;
   color: white;
 }
 
@@ -100,10 +100,10 @@ p {
     <p>Select a social login to continue</p>
     <div class="social-buttons">
       <button class="social-button facebook" onclick="loginWithFacebook()">
-        <img src="/public/image folder/facebook.png" alt="Facebook Logo">
+        <img src="/public/image folder/facebook-icons.png" alt="Facebook Logo">
       </button>
       <button class="social-button google" onclick="loginWithGoogle()">
-        <img src="/public/image folder/google-icon.jpg" alt="Google Logo">
+        <img src="/public/image folder/google.png" alt="Google Logo">
       </button>
       <button class="social-button github" onclick="loginWithGitHub()">
         <img src="/public/image folder/github-icon.png" alt="GitHub Logo">
