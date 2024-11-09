@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #000000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: #1f1f1f;
+  padding: 40px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  animation: popUp 0.5s ease-out forwards;
+}
+
+h2 {
+  font-size: 26px;
+  color: #FFD700; /* Yellow */
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 15px;
+  color: #CCCCCC;
+  margin-bottom: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.social-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-button.facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.social-button.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.social-button.github {
+  background-color: #333333;
+  color: white;
+}
+
+.social-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4); /* Yellow shadow on hover */
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome!</h2>
+    <p>Select a social login to continue</p>
+    <div class="social-buttons">
+      <button class="social-button facebook" onclick="loginWithFacebook()">
+        <img src="facebook-icon.png" alt="Facebook Logo">
+      </button>
+      <button class="social-button google" onclick="loginWithGoogle()">
+        <img src="google-icon.png" alt="Google Logo">
+      </button>
+      <button class="social-button github" onclick="loginWithGitHub()">
+        <img src="github-icon.png" alt="GitHub Logo">
+      </button>
+    </div>
+  </div>
+
+  <script>
+      function loginWithFacebook() {
+  alert("Redirecting to Facebook login...");
+  // Facebook OAuth login code here
+}
+
+function loginWithGoogle() {
+  alert("Redirecting to Google login...");
+  // Google OAuth login code here
+}
+
+function loginWithGitHub() {
+  alert("Redirecting to GitHub login...");
+  // GitHub OAuth login code here
+}
+
+  </script>
+</body>
+</html>
