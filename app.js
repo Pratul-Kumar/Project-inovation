@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const connectdb = require('./config/db');  // Using CommonJS `require`
 const dotenv = require('dotenv');
+const Razorpay = require('razorpay');
+const Payment = require('./models/payment');
 
 dotenv.config();
 connectdb();
@@ -241,6 +243,10 @@ app.get('/bgmi', (req, res) => {
 app.get('/freefire', (req, res) => {
   res.render('Anwesha Event/Free Fire', { title: 'Freefire Page' });
 });
+//payment route
+app.get('/payment', (req, res) => {
+  res.render('payment', { title: 'PaymentPage' });{ title: 'Payment Page' });
+});
 
 
 // Catch-all route for undefined routes (404 errors)
@@ -251,4 +257,44 @@ app.use((req, res, next) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+app.post('/create/orderId', async (req, res) => {
+  const options = {
+    amount: 200 * 100, // amount in smallest currency unit
+    currency: "INR",
+  };
+  try {
+    const order = await razorpay.orders.create(options);
+    res.send(order);
+
+    // Save the order details in the database
+    await Payment.create({
+      orderId: order.id,
+      amount: order.amount/100,
+      currency: order.currency,
+      status: 'pending',
+    });
+  } catch (error) {
+    res.status(500).send('Error creating order');
+  }
+});
+
+app.post('/api/payment/verify', async (req, res) => {
+  const { razorpayOrderId, razorpayPaymentId, signature } = req.body;
+  const crypto = require('crypto');
+  const generatedSignature = crypto
+    .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+    .update(`${razorpayOrderId}|${razorpayPaymentId}`)
+    .digest('hex');
+
+  if (generatedSignature === signature) {
+    await Payment.findOneAndUpdate(
+      { orderId: razorpayOrderId },
+      { paymentId: razorpayPaymentId, signature, status: 'completed' }
+    );
+    res.send('Payment verified successfully');
+  } else {
+    res.status(400).send('Payment verification failed');
+  }
 });
