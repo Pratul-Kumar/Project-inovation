@@ -82,7 +82,7 @@
 
             /*Container*/
 
-            .bannerContainer {
+            .rzp-button1 {
             position: relative;
             box-sizing: border-box;
             padding: 0;
@@ -98,7 +98,7 @@
 
             /*Banner */
 
-            .bannerContainer .banner {
+            .rzp-button1 .banner {
             background-color: #e7e5df;
             height: 70px;
             width: 250px;
@@ -109,31 +109,31 @@
 
             /*Loaders */
 
-            .bannerContainer .banner .loader {
+            .rzp-button1 .banner .loader {
             height: 100%;
             width: 100%;
             border-radius: 10px;
             position: absolute;
             }
 
-            .bannerContainer .banner .loader1 {
+            .rzp-button1 .banner .loader1 {
             background-color: #393e41;
             animation: loader 0.5s linear 0s;
             }
 
-            .bannerContainer .banner .loader2 {
+            .rzp-button1 .banner .loader2 {
             background-color: #44bba4;
             animation: loader 0.5s linear 0.2s;
             }
 
-            .bannerContainer .banner .loader3 {
+            .rzp-button1 .banner .loader3 {
             background-color: #e7bb41;
             animation: loader 0.5s linear 0.3s;
             }
 
             /*Main card*/
 
-            .bannerContainer .banner .mainCard {
+            .rzp-button1 .banner .mainCard {
             width: 100%;
             background-color: #e7e5df;
             display: flex;
@@ -145,14 +145,14 @@
             border-radius: 10px;
             }
 
-            .bannerContainer .banner span {
+            .rzp-button1 .banner span {
             font-size: 29px;
             font-weight: 900;
             transform: translateY(-120px);
             animation: appear 0.1s ease-in 0.9s forwards;
             }
 
-            .bannerContainer .banner svg {
+            .rzp-button1 .banner svg {
             width: 30px;
             transform: translateY(-100px);
             animation: appear 0.1s ease-in 0.9s forwards;
@@ -165,7 +165,7 @@
 
             /* Second card */
 
-            .bannerContainer .banner .secondCard {
+            .rzp-button1 .banner .secondCard {
             background-color: #393e41;
             display: flex;
             justify-content: space-around;
@@ -212,7 +212,7 @@
     <!-- Registration Form Section -->
     <section class="form-section">
         <h2>Registration Form</h2>
-        <form action="#" method="post">
+        <form method="post" type="/submit" >
 
             <!-- College -->
             <div class="form-group">
@@ -277,19 +277,21 @@
 
             <!-- Submit Button -->
              
-                <div class="bannerContainer" type="submit">
-                      <div class="banner">
-                        <div class="loader loader1"></div>
-                        <div class="loader loader2"></div>
-                        <div class="loader loader3"></div>
-                        <div class="loader mainCard">
-                          <span>Proceed</span>
-                          <div class="loader secondCard">
-                            <span>For Payment</span>
-                          </div>
-                        </div>
-                      </div>
+           <a href="/payment">
+            <button type="submit" class="rzp-button1">
+                <div class="banner" >
+                  <div class="loader loader1"></div>
+                  <div class="loader loader2"></div>
+                  <div class="loader loader3"></div>
+                  <div class="loader mainCard">
+                    <span>Proceed</span>
+                    <div class="loader secondCard">
+                      <span>For Payment</span>
+                    </div>
+                  </div>
                 </div>
+      </button>
+           </a>
         </form>
     </section>
 </div>
@@ -299,23 +301,29 @@
     <p>&copy; 2024 Technocrats Group of Institutes. All rights reserved.</p>
 </footer>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 <script>
+
+    let price=0;
     
 
     // Define max participants for each event and labels
     const eventMaxParticipants = {
-        "ROBO RACE": ["SOLO"],
+        "ROBO RACE": ["SQUAD"],
         "ROBO WAR": ["SQUAD"],
         "uiNOVATION(Hackthons)": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
-        "CODE CLASH 3.0": ["SOLO"],
+        "CODE CLASH": ["SOLO"],
         "FREE FIRE": ["SOLO", "SQUAD-4-MEMBER"],
         "BGMI": ["SOLO", "SQUAD-4-MEMBER"],
         "MUSICAL CHAIR": ["SOLO"],
         "RENEWABLE MODEL SHOWCASE": ["SOLO"],
-        "DUMCHARADE": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
+        "DUMCHARADE": ["SOLO","DUO", "TRIO", "SQUAD-4-MEMBER"],
         "OPEN MIC": ["SOLO", "DUO", "TRIO", "SQUAD-4-MEMBER"],
         "STORY TELLING": ["SOLO"],
-        "CORPORATE CHALLENGE SHOWDOWN": ["DUO", "SQUAD-5-MEMBER"],
+        "CORPORATE CHALLENGE SHOWDOWN": ["DUO","TRIO", "SQUAD-4-MEMBER", "SQUAD-5-MEMBER"],
         "ENTREPRENEURSHIP SALES STALL": ["SOLO", "DUO", "TRIO", "SQUAD-4-MEMBER", "SQUAD-5-MEMBER"],
         "ESCAPE ROOM/ BUSINESS": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
         "ENTREPRENEURIAL MEME CONTEST": ["SOLO", "DUO"],
@@ -551,8 +559,108 @@
         }
     }
 
-   
+    // find prices
+    
+    function findPrices() {
+        if(selectedEvent=="ROBO RACE" || selectedEvent=="ROBO WAR")
+    price=300;
+    else if(selectedEvent=="uiNOVATION(Hackthons)")
+    price=200;
+   else if(selectedEvent=="CODE CLASH")
+    price=75;
+else if((selectedEvent=="FREE FIRE" || selectedEvent=="BGMI") && numberSelect=="SOLO")
+    price=50;
+else if((selectedEvent=="FREE FIRE" || selectedEvent=="BGMI") && numberSelect=="SQUAD-4-MEMBER")
+prize=200;
+else if(selectedEvent=="MUSICAL CHAIR")
+price=20;
+else if(selectedEvent=="RENEWABLE MODEL SHOWCASE")
+price=50;
+else if((selectedEvent=="DUMCHARADE" || selectedEvent=="OPEN MIC" ) && numberSelect=="SOLO")
+price=20;
+else if((selectedEvent=="DUMCHARADE" || selectedEvent=="OPEN MIC" ) && numberSelect=="DUO")
+price=40;
+else if((selectedEvent=="DUMCHARADE" || selectedEvent=="OPEN MIC" ) && numberSelect=="TRIO")
+price=60;
+else if((selectedEvent=="DUMCHARADE" || selectedEvent=="OPEN MIC" )&& numberSelect=="SQUAD-4-MEMBER")
+price=80;
+else if(selectedEvent=="CORPORATE CHALLENGE SHOWDOWN" && numberSelect=="SOLO")
+price=100;
+else if(selectedEvent=="CORPORATE CHALLENGE SHOWDOWN")
+price=200;
+else if(selectedEvent=="ENTREPRENEURSHIP SALES STALL" && numberSelect=="SOLO")
+price=50;
+else if(selectedEvent="ENTREPRENEURSHIP SALES STALL")
+price=200;
+else if(selectedEvent=="ESCAPE ROOM/ BUSINESS" && numberSelect=="DUO")
+price=100;
+else if(selectedEvent=="ESCAPE ROOM/ BUSINESS")
+price=200
+else if(selectedEvent=="ENTREPRENEURIAL MEME CONTEST" && numberSelect=="SOLO")
+price=50;
+else if(selectedEvent=="ENTREPRENEURIAL MEME CONTEST")
+price=100;
+else if(selectedEvent=="RUNNING COMPETITION/ MARATHON")
+    price=30;
+    else if(selectedEvent=="TUG OF WAR" && numberSelect=="DUO")
+    price=200;
+else if(selectedEvent=="  TUG OF WAR")
+price=400;
+else if(selectedEvent=="TECHNICAL PRESENTATION" && numberSelect=="DUO")
+price=50;
+else if(selectedEvent=="TECHNICAL PRESENTATION")
+price=30;
+else if(selectedEvent=="CRAFT CARNIVAL/ POSTER MAKING, SLOGAN WRITING")
+price=30;
+else if(selectedEvent=="FLASH CLASH OF STYLES: THE DANCE FACE-OFF" && numberSelect=="SOLO")
+price=50;
+else if(selectedEvent=="FLASH CLASH OF STYLES: THE DANCE FACE-OFF" && numberSelect=="DUO")
+price=100;
+else if(selectedEvent=="FLASH CLASH OF STYLES: THE DANCE FACE-OFF" && numberSelect=="SQUAD-4-MEMBER")
+price=150;
+else if(selectedEvent=="TEASERQUEST")
+    price=200;
+else if(selectedEvent=="HOVERHUNT")
+price=30;
+else if(selectedEvent=="TECHNICAL QUIZ")
+price=20;
+
+    }
+
+    function sendDataToBackend() {
+    // Ek object me data store karna
+    const data = {
+      price:price
+    };
+
+    // Backend me POST request bhejna
+    fetch('/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // JSON format me data bhejna
+      },
+      body: JSON.stringify(data) // Data ko JSON string me convert karna
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json(); // JSON response parse karna
+    })
+    .then(data => {
+      console.log('Success:', data); // Success message ko console me print karna
+      alert('Data successfully sent to backend!');
+    })
+    .catch(error => {
+      console.error('Error:', error); // Error message ko console me print karna
+      alert('An error occurred while sending data to the backend.');
+    });
+  }
+
+  // Function ko call karna
+  sendDataToBackend();
+
 </script>
 
-</body>
+ </body>
 </html>
