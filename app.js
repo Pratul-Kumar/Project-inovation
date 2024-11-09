@@ -1,8 +1,14 @@
 const express = require('express');
 const path = require('path');
+const connectdb = require('./config/db');  // Using CommonJS `require`
+const dotenv = require('dotenv');
+
+dotenv.config();
+connectdb();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
+
 
 // Set EJS as the templating engine
 app.set('view engine', 'ejs');
@@ -44,6 +50,10 @@ app.get('/gallery', (req, res) => {
 app.get('/coding', (req, res) => {
   res.render('Coding club', { title: 'Coding Club Page' });
 });
+
+app.get('/Quiz ',(req, res) => {
+  res.render('Anwesha Event/Technical Quiz ', { title: 'Quiz Page' });
+})
 
 // Drone Club route
 app.get('/drone', (req, res) => {
@@ -111,7 +121,7 @@ app.get('/Dance', (req, res) => {
 });
 
 // IEEE Student Chapter route
-app.get('/IEEE Student chapter', (req, res) => {
+app.get('/IEEE', (req, res) => {
   res.render('IEEE Student chapter', { title: 'IEEE Student Chapter Page' });
 });
 
@@ -157,11 +167,28 @@ app.get('/chair', (req, res) => {
   res.render('Anwesha Event/Musical Chair', { title: 'Musical Chair Page' });
 });
 
+app.get('/race', (req, res) => {
+  res.render('Anwesha Event/roborace', { title: 'race Page' });
+});
+
+app.get('/war', (req, res) => {
+  res.render('Anwesha Event/robowar', { title: 'war Page' });
+});
+
+app.get('/presentation', (req, res) => {
+  res.render('Anwesha Event/technical presentation', { title: 'Presentation Page' });
+})
+
 //Anwesha Event/Renewable Model Showcase.ejs route
 
 app.get('/modelshowcase', (req, res) => {
   res.render('Anwesha Event/Renewable Model Showcase', { title: 'Model Showcase Page' });
 });
+
+app.get('/TEASERQUEST', (req, res) => {
+  res.render('Anwesha Event/TEASERQUEST', { title: 'TEASERQUEST Page' });
+})
+
 
 // Dumb Charades route
 

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration for Anwesha 2.0</title>
+    <link rel="stylesheet" href="stylesheet/navbaar.css">
+    <script src="javascript/navbaar.js"></script>
     <style>
         /* Basic Styles */
         body {
@@ -198,9 +200,80 @@
             }
             }
 
+            /* Developer Button */ 
+            .button {
+            --main-color: rgb(255, 255, 255);
+            --main-bg-color: rgba(0, 0, 0, 0.36);
+            --pattern-color: rgba(239, 239, 239, 0.073);
+
+            /* change this rotation value */
+            filter: hue-rotate(0deg);
+
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            background: radial-gradient(
+                circle,
+                var(--main-bg-color) 0%,
+                rgba(0, 0, 0, 0) 95%
+                ),
+                linear-gradient(var(--pattern-color) 1px, transparent 1px),
+                linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+            background-size:
+                cover,
+                15px 15px,
+                15px 15px;
+            background-position:
+                center center,
+                center center,
+                center center;
+            border-image: radial-gradient(
+                circle,
+                var(--main-color) 0%,
+                rgba(255, 0, 0, 0.638) 100%
+                )
+                1;
+            border-width: 1px 0 1px 0;
+            color: var(--main-color);
+            padding: 1rem 3rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            transition: background-size 0.2s ease-in-out;
+            }
+
+            .button:hover {
+            background-size:
+                cover,
+                10px 10px,
+                10px 10px;
+            }
+            .button:active {
+            filter: hue-rotate(250deg);
+            }
+
+
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="logo">
+            <img class="image-logo" src="/image folder/Student council png.png" title="council logo">
+            <h1>STUDENT COUNCIL</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/clubs">Clubs</a></li>
+            <li><a href="/faculty">Faculty</a></li>
+            <li><a href="/gallery">Event Gallary</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
 <div class="container">
     <!-- Header Section -->
@@ -296,7 +369,9 @@
 
 <!-- Footer Section -->
 <footer>
-    <p>&copy; 2024 Technocrats Group of Institutes. All rights reserved.</p>
+    <a href="/Dev">
+        <button class="button">Developer team</button>      
+      </a>
 </footer>
 
 <script>
@@ -306,7 +381,7 @@
     const eventMaxParticipants = {
         "ROBO RACE": ["SOLO"],
         "ROBO WAR": ["SQUAD"],
-        "HACKATHON": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
+        "uiNOVATION(Hackthons)": ["DUO", "TRIO", "SQUAD-4-MEMBER"],
         "CODE CLASH 3.0": ["SOLO"],
         "FREE FIRE": ["SOLO", "SQUAD-4-MEMBER"],
         "BGMI": ["SOLO", "SQUAD-4-MEMBER"],
@@ -327,7 +402,7 @@
         "SCREEN TO SPEECH" : ["SOLO"],
         "OUT OF BOX" : ["SOLO"],
         "FLASH CLASH OF STYLES: THE DANCE FACE-OFF": ["SOLO", "DUO", "SQUAD-4-MEMBER"],
-        "TECH THEME TREASURE HUNT": ["SQUAD-4-MEMBER"],
+        "TEASERQUEST": ["SQUAD-4-MEMBER"],
         "SKYHIGH SNAP AND SOLVE": ["SOLO", "DUO", "TRIO"],
         "HOVERHUNT": ["SOLO"],
         "TECHNICAL QUIZ": ["SOLO"],
